@@ -4,31 +4,31 @@ from LINETCR.lib.curve.ttypes import *
 import time,random,sys,json,codecs,threading,glob
 
 cl = LINETCR.LINE()
-cl.login(token="Elp9OduOsLw5qC5zFu50.t/OhN3S5Hes/OCuEWJaCKa.B6coFD/QeNMWoMByT4MgS+9o2e2UdKz85vMnprIAky8=")
+cl.login(token=" ISI AUTH TOKEN KAMU ")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="ElP57ESuPna2KpqhQmb5.T5o9VR4DFRj/wmU3nMUwTq.tX0vfjuTGesiSL+lRkyFeamfKzzPLQYIYRRhDDosCMw=")
+ki.login(token=" ISI AUTH TOKEN KAMU ")
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="El35LGLftkHz3V9SuQ2f.a6p5VbWek+Bp1ISxDIS4BW.UTJfZIEnafTvp1/JZG1c5NKpsfrBzyEc5/TQG4SJP3o=")
+kk.login(token=" ISI AUTH TOKEN KAMU ")
 kk.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(token="ElH6GKgjTyITKLJlNiLb.Z0/HuJAY8hX+9Mwq7qR2wW.OHJHR46NWeadbBBgybFzFO1RF+iXCN6uTUxrlcV2HaM=")
+kc.login(token=" ISI AUTH TOKEN KAMU ")
 kc.loginResult()
 
 kd = LINETCR.LINE()
-kd.login(token="ElcRugGtdyHpERXt7Jga.o4lvSE9UgAT11oz0Npme6G.gMvWkzoth4E6YbeqeBYX0THcnSKDsN6MM5eJRJff7h4=")
+kd.login(token=" ISI AUTH TOKEN KAMU ")
 kd.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(token="ElIiPv4jOy2wmlSTxv45.ovqlCVGWM9wqwxQ69uoTbq.OI/VskSEAkdCH1KVVk7GrItxSNBVNRBXhT41jxXoRQQ=")
+ke.login(token=" ISI AUTH TOKEN KAMU ")
 ke.loginResult()
 
 kf = LINETCR.LINE()
-kf.login(token="Elus5ATjLuoRwmnP9Yi9.rhpvHK0M0H7vNqQlQaB+Mq.tM5sHK2UaM9pWooMDACB25GSpt0l/WYFBWk/+TCCQRU=")
+kf.login(token=" ISI AUTH TOKEN KAMU ")
 kf.loginResult()
 
 print "login success"
@@ -99,8 +99,8 @@ Cmid = kc.getProfile().mid
 Dmid = kd.getProfile().mid
 Emid = ke.getProfile().mid
 Fmid = kf.getProfile().mid
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,"u4fea079f7b398444bea1c51ec2301c90"]
-admin=["u1f41296217e740650e0448b96851a3e2"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid," MASUKIN MID MAIN BOT NYA (CL) "]
+admin=[" MASUKIN MID YANG BAKALAN JADI ADMIN "]
 wait = {
     'protect':True,
     'protectinv':True,
