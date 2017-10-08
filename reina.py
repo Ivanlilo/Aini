@@ -147,6 +147,66 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
         messageReq[to] = -1
     messageReq[to] += 1
 
+def NOTIFIED_READ_MESSAGE(op):
+    try:
+        if op.param1 in wait2['readPoint']:
+            Name = cl.getContact(op.param2).displayName
+            if Name in wait2['readMember'][op.param1]:
+                pass
+            else:
+                wait2['readMember'][op.param1] += "\n・" + Name
+                wait2['ROM'][op.param1][op.param2] = "・" + Name
+        else:
+            pass
+    except:
+        pass
+
+def RECEIVE_MESSAGE(op):
+    msg = op.message
+    try:
+        if msg.contentType == 0:
+            try:
+                if msg.to in wait2['readPoint']:
+                    if msg.from_ in wait2["ROM"][msg.to]:
+                        del wait2["ROM"][msg.to][msg.from_]
+                else:
+                    pass
+            except:
+                pass
+        else:
+            pass
+    except KeyboardInterrupt:
+	       sys.exit(0)
+    except Exception as error:
+        print error
+        print ("\n\nRECEIVE_MESSAGE\n\n")
+        return
+
+def mention(to,nama):
+    aa = ""
+    bb = ""
+    strt = int(0)
+    akh = int(0)
+    nm = nama
+    print nm
+    for mm in nama:
+      akh = akh + 3
+      aa += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(mm)+"},"""
+      strt = strt + 4
+      akh = akh + 1
+      bb += "@x \n"
+    aa = (aa[:int(len(aa)-1)])
+    msg = Message()
+    msg.to = to
+    msg.from_ = profile.mid
+    msg.text = bb
+    msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
+    print msg
+    try:
+       cl.sendMessage(msg)
+    except Exception as error:
+        print error
+	
 def bot(op):
     try:
         if op.type == 0:
@@ -276,18 +336,6 @@ def bot(op):
             if op.param2 not in Bots:
                 if op.param2 not in admin:
         		    cl.inviteIntoGroup(op.param1,[op.param3])
-
-    	if op.type == 55:
-            try:
-                if op.param1 in wait2['readPoint']:
-                    Name = cl.getContact(op.param2).displayName
-                    if Name in wait2['readMember'][op.param1]:
-                        pass
-                    else:
-                        wait2['readMember'][op.param1] += "\n・" + Name
-                        wait2['ROM'][op.param1][op.param2] = "・" + Name
-            except:
-                pass
 
         if op.type == 15:
                 if op.param2 in Bots:
