@@ -76,6 +76,7 @@ helpMessage =""" Keyword BOT
 |=>Curl [Close Url Group]
 |=>Gurl [Gift You Url Group]
 |=>Cleanse [Kick all member a Group]
+|=>List grup [See all Grup Bot]
 
 |=*=Key SET Member And Admin=*=|
 |=>Protect on/off [Defend Grup]
