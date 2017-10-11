@@ -4,31 +4,31 @@ from LINETCR.lib.curve.ttypes import *
 import time,random,sys,json,codecs,threading,glob
 
 cl = LINETCR.LINE()
-cl.login(token="")
+cl.login(token="ElZFmoF7cgXWKzQXNOa6.q15T8aKEI+RbvTfGWdnrvG.ito5/OPG29JfTO2WdSf9fl038tC8CYtdD5mY9oJrDEU=")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="")
+ki.login(token="Elq6x3katy9h2fALWOQ5.T5o9VR4DFRj/wmU3nMUwTq.zA9v2WSVPuIGHu/TIVtIb3NlAabA8iLNv118tlkrIZQ=")
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="")
+kk.login(token="El3XkdEm7tK5sFk43P5f.a6p5VbWek+Bp1ISxDIS4BW.YxJcNZlUPK/q/qvZcnzzD2rmFuREnt2A0Qq9QFFLSAM=")
 kk.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(token="")
+kc.login(token="ElS95uXClRmkNVoLniQb.Z0/HuJAY8hX+9Mwq7qR2wW.18UfKrfdU572XOF+fXUYkQRmRdsJEfXiKArN/gMaOwY=")
 kc.loginResult()
 
 kd = LINETCR.LINE()
-kd.login(token="")
+kd.login(token="El0L7SviSTlkfsnyVsja.o4lvSE9UgAT11oz0Npme6G.MjflY3Dx/y1lxSERxh77Eay+tT/bnmGC3PuPidP1K6I=")
 kd.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(token="")
+ke.login(token="ElhItVerSOeqitgmHT15.ovqlCVGWM9wqwxQ69uoTbq.GRlbr7Dy3F6QwIPsM/SqUDKunMi7s2BvEhtRy+UljP0=")
 ke.loginResult()
 
 kf = LINETCR.LINE()
-kf.login(token="")
+kf.login(token="El6ldSqP8eZtOyzTWMx9.rhpvHK0M0H7vNqQlQaB+Mq.WBTGuEF/i5DtBcXoq0bG6AxGGeXH6kE2ZuVpjtE8GL4=")
 kf.loginResult()
 
 print "login success"
@@ -45,14 +45,13 @@ helpMessage =""" Keyword BOT
 |=>Gift (Send Your Suprise)
 |=>Bot Say hi (Bot Said Hayy)
 |=>Gn [Free Change Name Group]
-|=>Creator [LOOK CREATOR BOT Reina]
+|=>Creator [LOOK CREATOR BOT Alin]
 |=>Summon [Tag All in Grup]
-|=>Ratakan [Kick All Member a Grup]
 |=>Your name [Respone name Bot] 
 |=>Sc bot [Send Contact Bot]
 |=>Speed [Untuk Mengetahui Kecepatan Respon Bot]
-|=>Rn mid 1/2/3/4/5/6/7 [Shows the specific Bot Contact]
-|=>Rn yid [Show your ID] 
+|=>Al mid 1/2/3/4/5/6/7 [Shows the specific Bot Contact]
+|=>Al yid [Show your ID] 
 |=>Sider [Mengunci Titik Pembaca]
 |=>Read [Melihat Sider]
 |=>Gcreator:inv [Invite Pembuat Grup]
@@ -77,6 +76,8 @@ helpMessage =""" Keyword BOT
 |=>Gurl [Gift You Url Group]
 |=>Cleanse [Kick all member a Group]
 |=>List grup [See all Grup Bot]
+|=>Grup bc [Broadcast all grup]
+|=>Contact bc [Broadcast all contact]
 
 |=*=Key SET Member And Admin=*=|
 |=>Protect on/off [Defend Grup]
@@ -102,7 +103,7 @@ Cmid = kc.getProfile().mid
 Dmid = kd.getProfile().mid
 Emid = ke.getProfile().mid
 Fmid = kf.getProfile().mid
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,"u4fea079f7b398444bea1c51ec2301c90"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,"u435e6df0091e8bfac156d160c0335156"]
 admin=["u1f41296217e740650e0448b96851a3e2"]
 wait = {
     'protect':True,
@@ -122,7 +123,13 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":True,
-    "cName":"Reina-Chan ",
+    "cName":"[Alin-]BOT1 ",
+    "cName2":"[Alin-]BOT2 ",
+    "cName3":"[Alin-]BOT3 ",
+    "cName4":"[Alin-]BOT4 ",
+    "cName5":"[Alin-]BOT5 ",
+    "cName6":"[Alin-]BOT6 ",
+    "cName7":"[Alin-]BOT7 ",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,    
@@ -136,8 +143,121 @@ wait2 = {
     'ROM':{}
     }
 
+bot1_name = {
+    "1" : "[Alin-]BOT1",
+    "2" : "Alin-]BOT1[",
+    "3" : "lin-]BOT1[A",
+    "4" : "in-]BOT1[Al",
+    "5" : "n-]BOT1[Ali",
+    "6" : "-]BOT1[Alin",
+    "7" : "]BOT1[Alin-",
+    "8" : "BOT1[Alin-]",
+    "9" : "OT1[Alin-]B",
+    "10" : "T1[Alin-]BO",
+    "11" : "1[Alin-]BOT"
+}
+bot2_name = {
+    "1" : "[Alin-]BOT2",
+    "2" : "Alin-]BOT2[",
+    "3" : "lin-]BOT2[A",
+    "4" : "in-]BOT2[Al",
+    "5" : "n-]BOT2[Ali",
+    "6" : "-]BOT2[Alin",
+    "7" : "]BOT2[Alin-",
+    "8" : "BOT2[Alin-]",
+    "9" : "OT2[Alin-]B",
+    "10" : "T2[Alin-]BO",
+    "11" : "2[Alin-]BOT"
+}
+bot3_name = {
+    "1" : "[Alin-]BOT3",
+    "2" : "Alin-]BOT3[",
+    "3" : "lin-]BOT3[A",
+    "4" : "in-]BOT3[Al",
+    "5" : "n-]BOT3[Ali",
+    "6" : "-]BOT3[Alin",
+    "7" : "]BOT3[Alin-",
+    "8" : "BOT3[Alin-]",
+    "9" : "OT3[Alin-]B",
+    "10" : "T3[Alin-]BO",
+    "11" : "3[Alin-]BOT"
+}
+bot4_name = {
+    "1" : "[Alin-]BOT4",
+    "2" : "Alin-]BOT4[",
+    "3" : "lin-]BOT4[A",
+    "4" : "in-]BOT4[Al",
+    "5" : "n-]BOT4[Ali",
+    "6" : "-]BOT4[Alin",
+    "7" : "]BOT4[Alin-",
+    "8" : "BOT4[Alin-]",
+    "9" : "OT4[Alin-]B",
+    "10" : "T4[Alin-]BO",
+    "11" : "4[Alin-]BOT"
+}
+bot5_name = {
+    "1" : "[Alin-]BOT5",
+    "2" : "Alin-]BOT5[",
+    "3" : "lin-]BOT5[A",
+    "4" : "in-]BOT5[Al",
+    "5" : "n-]BOT5[Ali",
+    "6" : "-]BOT5[Alin",
+    "7" : "]BOT5[Alin-",
+    "8" : "BOT5[Alin-]",
+    "9" : "OT5[Alin-]B",
+    "10" : "T5[Alin-]BO",
+    "11" : "5[Alin-]BOT"
+}
+bot6_name = {
+    "1" : "[Alin-]BOT6",
+    "2" : "Alin-]BOT6[",
+    "3" : "lin-]BOT6[A",
+    "4" : "in-]BOT6[Al",
+    "5" : "n-]BOT6[Ali",
+    "6" : "-]BOT6[Alin",
+    "7" : "]BOT6[Alin-",
+    "8" : "BOT6[Alin-]",
+    "9" : "OT6[Alin-]B",
+    "10" : "T6[Alin-]BO",
+    "11" : "6[Alin-]BOT"
+}
+bot7_name = {
+    "1" : "[Alin-]BOT7",
+    "2" : "Alin-]BOT7[",
+    "3" : "lin-]BOT7[A",
+    "4" : "in-]BOT7[Al",
+    "5" : "n-]BOT7[Ali",
+    "6" : "-]BOT7[Alin",
+    "7" : "]BOT7[Alin-",
+    "8" : "BOT7[Alin-]",
+    "9" : "OT7[Alin-]B",
+    "10" : "T7[Alin-]BO",
+    "11" : "7[Alin-]BOT"
+}
+
 setTime = {}
 setTime = wait2['setTime']
+
+def upload_tempimage(cl):
+    '''
+        Upload a picture of a kitten. We don't ship one, so get creative!
+    '''
+
+    # Here's the metadata for the upload. All of these are optional, including
+    # this config dict itself.
+    config = {
+        'album': album,
+        'name':  'bot auto upload',
+        'title': 'bot auto upload',
+        'description': 'bot auto upload'
+    }
+
+    print("Uploading image... ")
+    image = cl.upload_from_path(image_path, config=config, anon=False)
+    print("Done")
+    print()
+
+    return image
 
 def mention(to,nama):
     aa = ""
@@ -771,11 +891,31 @@ def bot(op):
                     if Name in wait2['readMember'][op.param1]:
                         pass
                     else:
-                        wait2['readMember'][op.param1] += "T E R C Y D U K\n"+"[~] "+ Name +"\n"
+                        wait2['readMember'][op.param1] += "[~] "+ Name
                 else:
                     pass
             except:
                 pass
+        if op.type == 26:
+            msg = op.message
+            try:
+                if msg.contentType == 0:
+                    try:
+                        if msg.to in wait['readPoint']:
+                            if msg.from_ in wait["ROM"][msg.to]:
+                                del wait["ROM"][msg.to][msg.from_]
+                        else:
+                            pass
+                    except:
+                        pass
+                else:
+                    pass
+            except KeyboardInterrupt:
+                   sys.exit(0)
+            except Exception as error:
+                print error
+                print ("\n\nRECEIVE_MESSAGE\n\n")
+                return
         if op.type == 26:
             msg = op.message
             if msg.contentType == 13:
@@ -884,7 +1024,7 @@ def bot(op):
                 ki.inviteIntoGroup(msg.to,[midd])
             elif msg.text in ["Creator","creator"]:
                 msg.contentType = 13
-                cl.sendText(msg.to, "ADD MY CREATOR BOT Reina\nPROTECT GROUP")
+                cl.sendText(msg.to, "ADD MY CREATOR BOT Alin\nPROTECT GROUP")
                 msg.contentMetadata = {'mid': 'u1f41296217e740650e0448b96851a3e2'}
                 cl.sendMessage(msg)
             elif msg.text in ["me","Me"]:
@@ -1077,11 +1217,11 @@ def bot(op):
                 cl.sendText(msg.to,msg.to)
             elif msg.text in ["Creator","creator"]:
                 msg.contentType = 13
-                cl.sendText(msg.to, "ADD MY CREATOR BOT Reina\nPROTECT GROUP")
+                cl.sendText(msg.to, "ADD MY CREATOR BOT Alin\nPROTECT GROUP")
                 msg.contentMetadata = {'mid': 'u1f41296217e740650e0448b96851a3e2'}
                 cl.sendMessage(msg)
                 pass
-                cl.sendText(msg.to, "ADD MY STAFF BOT Reina\nPROTECT GROUP")
+                cl.sendText(msg.to, "ADD MY STAFF BOT Alin\nPROTECT GROUP")
                 msg.contentMetadata = {'mid': 'u1f41296217e740650e0448b96851a3e2'}
                 cl.sendMessage(msg)
                 print "SUKSES -- SEND CREATOR AND STAFF"
@@ -1203,6 +1343,34 @@ def bot(op):
                     profile_B.displayName = string
                     kk.updateProfile(profile_B)
                     kk.sendText(msg.to,"name " + string + " done")
+            elif msg.text in ["Cv3 rename "]:
+                string = msg.text.replace("Cv3 rename ","")
+                if len(string.decode('utf-8')) <= 20:
+                    profile_B = kc.getProfile()
+                    profile_B.displayName = string
+                    kc.updateProfile(profile_B)
+                    kc.sendText(msg.to,"name " + string + " done")
+            elif msg.text in ["Cv4 rename "]:
+                string = msg.text.replace("Cv4 rename ","")
+                if len(string.decode('utf-8')) <= 20:
+                    profile_B = kd.getProfile()
+                    profile_B.displayName = string
+                    kd.updateProfile(profile_B)
+                    kd.sendText(msg.to,"name " + string + " done")
+            elif msg.text in ["Cv5 rename "]:
+                string = msg.text.replace("Cv5 rename ","")
+                if len(string.decode('utf-8')) <= 20:
+                    profile_B = ke.getProfile()
+                    profile_B.displayName = string
+                    ke.updateProfile(profile_B)
+                    ke.sendText(msg.to,"name " + string + " done")
+            elif msg.text in ["Cv6 rename "]:
+                string = msg.text.replace("Cv6 rename ","")
+                if len(string.decode('utf-8')) <= 20:
+                    profile_B = kf.getProfile()
+                    profile_B.displayName = string
+                    kf.updateProfile(profile_B)
+                    kf.sendText(msg.to,"name " + string + " done")
             elif msg.text in ["Mc "]:
                 mmid = msg.text.replace("Mc ","")
                 msg.contentType = 13
@@ -1705,6 +1873,31 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,"Please turn on the name clock")
 
+            elif msg.text == "set":
+                    cl.sendMessage(msg.to, "I have set a read point ♪\n「tes」I will show you who I have read ♪")
+                    try:
+                        del wait['readPoint'][msg.to]
+                        del wait['readMember'][msg.to]
+                    except:
+                        pass
+                    wait['readPoint'][msg.to] = msg.id
+                    wait['readMember'][msg.to] = ""
+                    wait['setTime'][msg.to] = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                    wait['ROM'][msg.to] = {}
+                    print wait
+            elif msg.text == "tes":
+                if msg.to in wait['readPoint']:
+                    if wait["ROM"][msg.to].items() == []:
+                        chiya = ""
+                    else:
+                        chiya = ""
+                        for rom in wait["ROM"][msg.to].items():
+                            print rom
+                            chiya += rom[1] + "\n"
+
+                    cl.sendMessage(msg.to, "People who readed %s\nthat's it\n\nPeople who have ignored reads\n%sIt is abnormal ♪\n\nReading point creation date n time:\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
+                else:
+                    cl.sendMessage(msg.to, "An already read point has not been set.\n「set」you can send ♪ read point will be created ♪")
             elif msg.text == "Sider":
                     cl.sendText(msg.to, "Dasar sider lucknut :v \nKetik 「Read」 Gua bakal ngasih tau siapa sidernya")
                     try:
@@ -1751,7 +1944,7 @@ def bot(op):
                         G.preventJoinByTicket(G)
                         ki.updateGroup(G)
 
-            elif msg.text in ["Reina join"]:
+            elif msg.text in ["Alin join"]:
                   X = kc.getGroup(msg.to)
                   X.preventJoinByTicket = False
                   kc.updateGroup(X)
@@ -1791,7 +1984,7 @@ def bot(op):
                         print "SUKSES -- BOT OUT GROUP"
                     except:
                         pass
-            elif msg.text in ["Bot1 @bye","Reina bye","bye"]:
+            elif msg.text in ["Bot1 @bye","Alin bye","bye"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -1985,31 +2178,31 @@ def bot(op):
                                 kk.sendText(msg.to,"Succes Cv")
                                 kc.sendText(msg.to,"Succes Cv")
 # ----------------- Me By tag / Me @ and Mid By tag/ Mid @
-            elif msg.text in ["All mid","Ar mid all"]:
-                cl.sendText(msg.to,"Reina-Chan ID\nReina\n" + mid + "\n\nDini\n" + Amid + "\n\nAini\n" + Bmid + "\n\nAlin\n" + Cmid + "\n\nWa-One\n" + Dmid + "\n\nAlfia\n" + Emid + "\n\nBOT PROTECT BY ALIN\n" + Fmid)
+            elif msg.text in ["All mid","Al mid all"]:
+                cl.sendText(msg.to,"Alin BOT MID\n[Alin-]BOT1\n" + mid + "\n\n[Alin-]BOT2\n" + Amid + "\n\n[Alin-]BOT3\n" + Bmid + "\n\n[Alin-]BOT4\n" + Cmid + "\n\n[Alin-]BOT5\n" + Dmid + "\n\n[Alin-]BOT6\n" + Emid + "\n\n[Alin-]BOT7\n" + Fmid)
                 print "[Command]Mid executed"
-            elif msg.text in ["Ar Mid 1","Rn mid 1"]:
+            elif msg.text in ["Al Mid 1","Rn mid 1"]:
                 cl.sendText(msg.to,mid)
                 print "[Command]Mid 1 executed"
-            elif msg.text in ["Ar Mid 2","Rn mid 2"]:
+            elif msg.text in ["Al Mid 2","Rn mid 2"]:
                 kk.sendText(msg.to,Amid)
                 print "[Command]Mid 2 executed"
-            elif msg.text in ["Ar Mid 3","Rn mid 3"]:
+            elif msg.text in ["Al Mid 3","Rn mid 3"]:
                 ki.sendText(msg.to,Bmid)
                 print "[Command]Mid 3 executed"
-            elif msg.text in ["Ar Mid 4","Rn mid 4"]:
+            elif msg.text in ["Al Mid 4","Rn mid 4"]:
                 kc.sendText(msg.to,Cmid)
                 print "[Command]Mid 4 executed"
-            elif msg.text in ["Ar Mid 5","Rn mid 5"]:
+            elif msg.text in ["Al Mid 5","Rn mid 5"]:
                 kd.sendText(msg.to,Dmid)
                 print "[Command]Mid 5 executed"
-            elif msg.text in ["Ar Mid 6","Rn mid 6"]:
+            elif msg.text in ["Al Mid 6","Rn mid 6"]:
                 ke.sendText(msg.to,Emid)
                 print "[Command]Mid 6 executed"
-            elif msg.text in ["Ar Mid 7","Rn mid 7"]:
+            elif msg.text in ["Al Mid 7","Rn mid 7"]:
                 kf.sendText(msg.to,Fmid)
                 print "[Command]Mid 7 executed"
-            elif msg.text in ["Ar Yid","Rn yid"]:
+            elif msg.text in ["Al Yid","Rn yid"]:
                 cl.sendText(msg.to,msg.from_)
                 print "[Command]Yid executed"
             elif msg.text in ["Sc bot","bot all"]:
@@ -2241,8 +2434,21 @@ def bot(op):
                         kk.kickoutFromGroup(msg.to,[jj])
                         kc.kickoutFromGroup(msg.to,[jj])
                     cl.sendText(msg.to,"Bye Bye\nUser Blacklist emg Harus Dikick")
-            elif "Group bc " in msg.text:
-                bctxt = msg.text.replace("Group bc ", "")
+            #-----------------------[Broadcast Section]------------------------
+            elif "Broadcast:group " in msg.text:
+                 bctxt = msg.text.replace("Broadcast:group", "")
+                 n = cl.getGroupIdsJoined()
+                 for manusia in n:
+                      cl.sendText(manusia, (bctxt))
+
+            elif "Broadcast:ct " in msg.text:
+                 bctxt = msg.text.replace("Broadcast:ct ", "")
+                 t = cl.getAllContactIds()
+                 for manusia in t:
+                      cl.sendText(manusia, (bctxt)) 
+
+            elif "Grup bc " in msg.text:
+                bctxt = msg.text.replace("Grup bc ", "")
                 n = cl.getGroupIdsJoined()
                 for manusia in n:
                     cl.sendText(manusia, [bctxt])
@@ -2251,6 +2457,12 @@ def bot(op):
                 t = cl.getAllContactIds()
                 for manusia in t:
                     cl.sendText(manusia, [bctxt])
+            elif msg.text in ["Group id","ç¾¤çµ„å…¨id"]:
+                gid = cl.getGroupIdsJoined()
+                h = ""
+                for i in gid:
+                    h += "[%s]:%s\n" % (cl.getGroup(i).name,i)
+                cl.sendText(msg.to,h)
             elif msg.text in ["Gcreator:inv"]:
               if msg.toType == 2:
                 ginfo = cl.getGroup(msg.to)
@@ -2261,6 +2473,66 @@ def bot(op):
                     print "SUKSES INVITE GCREATOR"
                 except:
                     pass
+            elif "Spam " in msg.text:
+              if msg.from_ in admin:
+                txt = msg.text.split(" ")
+                jmlh = int(txt[2])
+                teks = msg.text.replace("Spam ")+str(txt[1])+" "+str(jmlh + " ","")
+                tulisan = jmlh * (teks+"\n")
+                #@Alin
+                if txt[1] == "on":
+                    if jmlh <= 60:
+                       for x in range(jmlh):
+                           cl.sendText(msg.to, teks)
+                    else:
+                        cl.sendText(msg.to, "Kelebihan batas:v")
+                elif txt[1] == "off":
+                    if jmlh <= 100:
+                        cl.sendText(msg.to, tulisan)
+                    else:
+                        cl.sendText(msg.to, "Kelebihan batas :v")
+            
+            elif msg.text in ["Steal"]:
+              if message.contentType == 13 :
+                 mid = message.contentMetadata['mid']
+                 name = message.contentMetadata['displayName']
+                 stat = message.contentMetadata['statusMessage']
+                 foo = ['jomblo', 'kicker', 'alim', 'pacaran', 'calon menantu yang baik', 'bau tanah']
+                 pret = random.choice(foo)
+                 kk.sendMessage("[" + name + "]\n \n" "mid :" + mid + "\nstatus: " + pret + "\nProfil pict: http://os.line.naver.jp/os/p/" + mid  + "\nstatus: " + stat  )
+
+            elif "Al stalk " in msg.text:
+                print "[Command]Stalk executing"
+                stalkID = msg.text.replace("Al stalk ","")
+                subprocess.call(["instaLooter",stalkID,"tmp/","-n","1"])   
+                files = glob.glob("tmp/*.jpg")
+                for file in files:
+                    os.rename(file,"tmp/tmp.jpg")
+                fileTmp = glob.glob("tmp/tmp.jpg")
+                if not fileTmp:
+                    cl.sendText(msg.to, "Image not found, maybe the account haven't post a single picture or the account is private")
+                    print "[Command]Stalk executed - no image found"
+                else:
+                    image = upload_tempimage(client)
+                    cl.sendText(msg.to, format(image['link']))
+                    print "[Command]Stalk executed - success"
+
+            elif "Rn stalk " in msg.text:
+                print "[Command]Stalk executing"
+                stalkID = msg.text.replace("Rn stalk ","")
+                subprocess.call(["instaLooter",stalkID,"tmp/","-n","1"])   
+                files = glob.glob("tmp/*.jpg")
+                for file in files:
+                    os.rename(file,"tmp/tmp.jpg")
+                fileTmp = glob.glob("tmp/tmp.jpg")
+                if not fileTmp:
+                    cl.sendText(msg.to, "Image not found, maybe the account haven't post a single picture or the account is private")
+                    print "[Command]Stalk executed - no image found"
+                else:
+                    image = upload_tempimage(client)
+                    cl.sendText(msg.to, format(image['link']))
+                    subprocess.call(["sudo","rm","-rf","tmp/tmp.jpg"])
+                    print "[Command]Stalk executed - success"
             elif msg.text in ["List grup"]:
               if msg.from_ in admin:
                 gid = cl.getGroupIdsJoined()
@@ -2268,6 +2540,67 @@ def bot(op):
                 for i in gid:
                     h += "[~] [%s]:\n" % (cl.getGroup(i).name)
                 cl.sendText(msg.to,"======[List Grup]======\n"+ h +"Total Group :" +str(len(gid)))
+            elif "Ar random:" in msg.text:
+                if msg.toType == 2:
+                    if msg.from_ in admin:
+                        strnum = msg.text.replace("Ar random:","")
+                        source_str = 'abcdefghijklmnopqrstuvwxyz1234567890@:;./_][!&%$#)(=~^|'
+                        try:
+                            num = int(strnum)
+                            group = cl.getGroup(msg.to)
+                            for var in range(0,num):
+                                name = "".join([random.choice(source_str) for x in xrange(10)])
+                                time.sleep(0.05)
+                                group.name = name
+                                random.choice(KAC).updateGroup(group)
+                        except:
+                            cl.sendText(msg.to,"Error")
+                        print "[Command]Random executed"
+                    else:
+                        cl.sendText(msg.to,"Command denied.")
+                        cl.sendText(msg.to,"Staff or higher permission required.")
+                        print "[Error]Command denied - staff or higher permission required"
+            # -------- VIEW SEEN ---------- 
+            #elif msg.text.lower() == rname+' setview':
+            #    subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+            #    cl.sendMessage(msg.to, "Checkpoint checked!")
+            #    print "@setview"
+            #elif msg.text.lower() == rname+' viewseen':
+            #    with open('dataSeen/'+group_id+'.txt','r') as rr:
+            #        contactArr = rr.readlines()
+            #        for v in xrange(len(contactArr) -1,0,-1):
+            #            num = re.sub(r'\n', "", contactArr[v])
+            #            contacts.append(num)
+            #            pass
+            #        contacts = list(set(contacts))
+            #        for z in range(len(contacts)):
+            #            arg = contacts[z].split('|')
+            #            userList.append(arg[0])
+            #            timelist.append(arg[1])
+            #        uL = list(set(userList))
+            #        for ll in range(len(uL)):
+            #            try:
+            #                getIndexUser = userList.index(uL[ll])
+            #                timeSeen.append(time.strftime("%H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
+            #                recheckData.append(userList[getIndexUser])
+            #            except IndexError:
+            #                conName.append('nones')
+            #                pass
+            #        contactId = cl.getContact(recheckData)
+            #        for v in range(len(recheckData)):
+            #            dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
+            #            pass
+            #        if len(dataResult) > 0:
+            #            tukang = "List Viewer\n* "
+            #            grp = '\n* '.join(str(f) for f in dataResult)
+            #            total = '\n\nTotal %i viewers (%s)' % (len(dataResult), datetime.now().strftime('%H:%M:%S') )
+            #            cl.sendMessage(msg.to, "%s %s %s" % (tukang, grp, total))
+            #        else:
+            #            cl.sendMessage(msg.to, "Belum ada viewers")
+            #        print "@viewseen"
+            #except Exception as e:
+            #    print "ERROR : " + str(e)
+            
             elif msg.text in ["Clear"]:
                 if msg.toType == 2:
                     group = cl.getGroup(msg.to)
@@ -2293,42 +2626,435 @@ def a2():
     else:
         return True
 
+def nameUpdate_Bot1():
+    while True:
+        try:
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["1"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["2"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["3"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["4"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["5"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["6"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["7"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["8"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["9"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["10"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+            profile = cl.getProfile()
+            profile.displayName = bot1_name["11"]
+            cl.updateProfile(profile)
+            time.sleep(0.5)
+        except:
+            pass
+
+def nameUpdate_Bot2():
+    while True:
+        try:
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["1"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["2"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["3"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["4"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["5"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["6"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["7"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["8"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["9"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["10"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ki.getProfile()
+            profile.displayName = bot2_name["11"]
+            ki.updateProfile(profile)
+            time.sleep(0.5)
+        except:
+            pass
+
+def nameUpdate_Bot3():
+    while True:
+        try:
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["1"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["2"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["3"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["4"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["5"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["6"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["7"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["8"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["9"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["10"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kk.getProfile()
+            profile.displayName = bot3_name["11"]
+            kk.updateProfile(profile)
+            time.sleep(0.5)
+        except:
+            pass
+
+def nameUpdate_Bot4():
+    while True:
+        try:
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["1"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["2"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["3"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["4"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["5"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["6"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["7"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["8"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["9"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["10"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kc.getProfile()
+            profile.displayName = bot4_name["11"]
+            kc.updateProfile(profile)
+            time.sleep(0.5)
+        except:
+            pass
+
+def nameUpdate_Bot5():
+    while True:
+        try:
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["1"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["2"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["3"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["4"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["5"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["6"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["7"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["8"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["9"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["10"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kd.getProfile()
+            profile.displayName = bot5_name["11"]
+            kd.updateProfile(profile)
+            time.sleep(0.5)
+        except:
+            pass
+
+def nameUpdate_Bot6():
+    while True:
+        try:
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["1"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["2"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["3"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["4"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["5"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["6"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["7"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["8"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["9"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["10"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+            profile = ke.getProfile()
+            profile.displayName = bot6_name["11"]
+            ke.updateProfile(profile)
+            time.sleep(0.5)
+        except:
+            pass
+
+def nameUpdate_Bot7():
+    while True:
+        try:
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["1"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["2"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["3"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["4"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["5"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["6"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["7"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["8"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["9"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["10"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+            profile = kf.getProfile()
+            profile.displayName = bot7_name["11"]
+            kf.updateProfile(profile)
+            time.sleep(0.5)
+        except:
+            pass
+
 def nameUpdate():
     while True:
         try:
         #while a2():
-            #pass
+            pass
             if wait["clock"] == True:
                 now2 = datetime.now()
                 nowT = datetime.strftime(now2,"(%H:%M)")
                 profile = cl.getProfile()
                 profile.displayName = wait["cName"] + nowT
                 cl.updateProfile(profile)
+
+                profile2 = ki.getProfile()
+                profile2.displayName = wait["cName2"] + nowT
+                ki.updateProfile(profile2)
+
+                profile3 = kk.getProfile()
+                profile3.displayName = wait["cName3"] + nowT
+                kk.updateProfile(profile3)
+
+                profile4 = kc.getProfile()
+                profile4.displayName = wait["cName4"] + nowT
+                kc.updateProfile(profile4)
+
+                profile5 = kd.getProfile()
+                profile5.displayName = wait["cName5"] + nowT
+                kd.updateProfile(profile5)
+
+                profile6 = ke.getProfile()
+                profile6.displayName = wait["cName6"] + nowT
+                ke.updateProfile(profile6)
+
+                profile7 = kf.getProfile()
+                profile7.displayName = wait["cName7"] + nowT
+                kf.updateProfile(profile7)
             time.sleep(600)
         except:
             pass
-thread2 = threading.Thread(target=nameUpdate)
+thread1 = threading.Thread(target=nameUpdate_Bot1)
+thread1.daemon = True
+thread1.start()
+thread2 = threading.Thread(target=nameUpdate_Bot2)
 thread2.daemon = True
 thread2.start()
+thread3 = threading.Thread(target=nameUpdate_Bot3)
+thread3.daemon = True
+thread3.start()
+thread4 = threading.Thread(target=nameUpdate_Bot4)
+thread4.daemon = True
+thread4.start()
+thread5 = threading.Thread(target=nameUpdate_Bot5)
+thread5.daemon = True
+thread5.start()
+thread6 = threading.Thread(target=nameUpdate_Bot6)
+thread6.daemon = True
+thread6.start()
+thread7 = threading.Thread(target=nameUpdate_Bot7)
+thread7.daemon = True
+thread7.start()
 
-def autolike():
+def likePost():
     for zx in range(0,20):
         hasil = cl.activity(limit=20)
-    if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
-        try: 
-            cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by Alif\n\nhttp://line.me/ti/p/%40dsd5411x")
-            kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-            kk.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by Alif\n\nhttp://line.me/ti/p/%40dsd5411x")
-            print "Like"
-        except:
-            pass
-    else:
-        print "Already Liked"
-        time.sleep(500)
-thread2 = threading.Thread(target=autolike)
-thread2.daemon = True
-thread2.start()
+        if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
+            if hasil['result']['posts'][zx]['userInfo']['mid'] in staff:
+                try:    
+                    cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+                    ki.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+                    kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+                    kc.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+                    kd.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+                    ke.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+                    kf.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+                    cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto like by Alin")
+                    print "Like"
+                except:
+                    pass
+            else:
+                print "Not Admin or staff"
 
 while True:
     try:
