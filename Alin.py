@@ -5,31 +5,31 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
 cl = LINETCR.LINE()
-cl.login(token="El0zSEZjsGkmQ8U6vkL2.XXpKnsQ6turNLW649N8jiG.OnqYe981Mf+5UKrZqMkn46WHhgKWhzh3aNRKqRRJq/o=")
+cl.login(token="")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="El8yaUVnnCGAZR7f04N6.q15T8aKEI+RbvTfGWdnrvG.XIl66o+Qy7ppvz5dpoK50M+vTiPT/pestRsuN7YW+C0=")
+ki.login(token="")
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="ElZjXozyqrNBSxPIDSd5.UyvtKcGhC5+fyhpowMpR1q.lcBipkqbOfUwghWAIhLW0KX71MKkIeNCJdBAA70kb+4=")
+kk.login(token="")
 kk.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(token="ElCFkbZ8bJLI1OepLs97.D7/d94XdMjFkAX3iq9TDnW.y8fBg1EKZvbtI+pRxHEuOoqCKJNhkEta06DnGMSoXBI=")
+kc.login(token="")
 kc.loginResult()
 
 kd = LINETCR.LINE()
-kd.login(token="ElFboq4YotCxrc6KchI4.zZgpJFVgnTXsAoBGot7R5a.m73ipn9Oete00vGQKXQXmLxJFVa+lfWU6UZUGIu7pu8=")
+kd.login(token="")
 kd.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(token="ElAShEWQBs0hqKopBVW1.4fuVTJqVSQWyBCcCKr7WSq.4p9tEulR26lTSlMpPnvZoKNJhREMQ37c7ZmldtxQhu4=")
+ke.login(token="")
 ke.loginResult()
 
 kf = LINETCR.LINE()
-kf.login(token="El7wxOXITAP5eD5O5yYc.e3soR9LoLnjgYyOSUmYKNa.wG/8Wsy8XaqTmO3xXYtAIoYdrXGWxSdaxkW1xIA3rnc=")
+kf.login(token="")
 kf.loginResult()
 
 print "login success"
@@ -77,8 +77,6 @@ helpMessage =""" Keyword BOT
 |=>Gurl [Gift You Url Group]
 |=>Cleanse [Kick all member a Group]
 |=>List grup [See all Grup Bot]
-|=>Grup bc [Broadcast all grup]
-|=>Kontak bc [Broadcast all contact]
 |=>Bc:grup [Broadcast all Grup]
 |=>Bc:ct [Broadcast all contact]
 
@@ -86,6 +84,7 @@ helpMessage =""" Keyword BOT
 |=>Protect on/off [Defend Grup]
 |=>Qr on/off [Defend Qr Grup]
 |=>Inv on/off [Defend Kicker]
+|=>Join on/off [Defend Join Grup]
 |=>Comment on/off [Comment Add Friend]
 |=>Join on/off [Auto Join]
 |=>Leave on/off [Auto Leave]
@@ -108,11 +107,12 @@ Dmid = kd.getProfile().mid
 Emid = ke.getProfile().mid
 Fmid = kf.getProfile().mid
 Bots=[mid,mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,"u1f41296217e740650e0448b96851a3e2"]
-admin=["u1f41296217e740650e0448b96851a3e2","uf3bcfa7bc5f877610b60b0baad1"]
+admin=["u1f41296217e740650e0448b96851a3e2"]
 wait = {
-    'protect':True,
-    'protectinv':True,
-    'protectqr':True,
+    'protect':False,
+    'protectinv':False,
+    'protectqr':False,
+    'Protectjoin':False,
     'contact':True,
     'autoJoin':True,
     'autoCancel':{"on":True,"members":1},
@@ -126,7 +126,7 @@ wait = {
     "commentBlack":{},
     "wblack":False,
     "dblack":False,
-    "clock":True,
+    "clock":False,
     "cName":"Reina-Chan ",
     "cName2":"Pɾøтøтуρє ",
     "cName3":"Pɾøтøтуρє ",
@@ -149,6 +149,66 @@ wait2 = {
 
 setTime = {}
 setTime = wait2['setTime']
+
+def mention(to,nama):
+    aa = ""
+    bb = ""
+    strt = int(12)
+    akh = int(12)
+    nm = nama
+    #print nm
+    for mm in nm:
+      akh = akh + 2
+      aa += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(mm)+"},"""
+      strt = strt + 6
+      akh = akh + 4
+      bb += "\xe2\x98\xbb @x \n"
+    aa = (aa[:int(len(aa)-1)])
+    msg = Message()
+    msg.to = to
+    msg.from_ = profile.mid
+    msg.text = "[ENTION]\n"+bb
+    msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
+    #print msg
+    try:
+       cl.sendMessage(msg)
+    except Exception as error:
+        print error
+
+def sendMessage(to, text, contentMetadata={}, contentType=0):
+    mes = Message()
+    mes.to, mes.from_ = to, profile.mid
+    mes.text = text
+    mes.contentType, mes.contentMetadata = contentType, contentMetadata
+    if to not in messageReq:
+        messageReq[to] = -1
+    messageReq[to] += 1
+
+def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
+    #print op
+    try:
+        cl.sendText(op.param1, cl.getContact(op.param2).displayName + "Selamat Datang😊\n " + group.name + "Salam Kenal Bro!")
+    except Exception as e:
+        print e
+        print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
+        return
+
+def NOTIFIED_KICKOUT_FROM_GROUP(op):
+    try:
+        cl.sendText(op.param1, cl.getContact(op.param3).displayName + " Jangan Main Kick!\n(/*´･ω･*\)")
+    except Exception as e:
+        print e
+        print ("\n\nNOTIFIED_KICKOUT_FROM_GROUP\n\n")
+        return
+
+def NOTIFIED_LEAVE_GROUP(op):
+    try:
+        cl.sendText(op.param1, cl.getContact(op.param2).displayName + " Good Bye\n(*´･ω･*)")
+        ki.sendText(msg,to,"Semoga Tenang Bagi yang Meninggalkan Grup 🏳️")
+    except Exception as e:
+        print e
+        print ("\n\nNOTIFIED_LEAVE_GROUP\n\n")
+        return
 
 def bot(op):
     try:
@@ -271,11 +331,8 @@ def bot(op):
                     cl.cancelGroupInvitation(op.param1, matched_list)
 
         if op.type == 15:
-            group = cl.getGroup(op.param1)
-            cb = Message()
-            cb.to = op.param1
-            cb.text = cl.getContact(op.param2).displayName + " Selamat Tinggal "
-            cl.sendMessage(cb)
+            random.choice(KAC).sendText(op.param1, "Good Bye :)")
+            print op.param3 + "has left the group"
 
         if op.type == 17:
             group = cl.getGroup(op.param1)
@@ -284,7 +341,12 @@ def bot(op):
             cb.text = cl.getContact(op.param2).displayName + " Selamat Datang di " + group.name
             cl.sendMessage(cb)
 
-	    if op.type == 19:
+        if op.type == 17:
+                if op.param2 not in Bots:
+                    if op.param2 not in admin:
+                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+
+        if op.type == 19:
                 if op.param2 not in Bots:
                     if op.param2 not in admin:
                         return
@@ -724,6 +786,38 @@ def bot(op):
             if msg.toType == 1:
                 if wait["leaveRoom"] == True:
                     cl.leaveRoom(msg.to)
+            if msg.toType == 2:
+                if msg.contentType == 0:
+                  if msg.text in["Tag","tag"]:
+                      if msg.from_ in admin:
+                         group = cl.getGroup(msg.to)
+                         nama = [contact.mid for contact in group.members]
+                         nm1, nm2, nm3, jml = [], [], [], len(nama)
+                         if jml <= 100:
+                            mention(msg.to, nama)
+                         if jml > 100 and jml < 200:
+                            for i in range(0, 99):
+                                nm1 += [nama[i]]
+                            mention(msg.to, nm1)
+                            for j in range(100, len(nama)-1):
+                                nm2 += [nama[j]]
+                            mention(msg.to, nm2)
+                         if jml > 200  and jml < 300:
+                            for i in range(0, 99):
+                                nm1 += [nama[i]]
+                            mention(msg.to, nm1)
+                            for j in range(100, 199):
+                                nm2 += [nama[j]]
+                            mention(msg.to, nm2)
+                            for k in range(200, len(nama)-1):
+                                nm3 += [nama[k]]
+                            mention(msg.to, nm3)
+                         if jml > 300:
+                            print "Terlalu Banyak Men 300+"
+                         cnt = Message()
+                         cnt.text = "Done:"+str(jml)
+                         cont.to = msg.to
+                         cl.sendMessage(cnt)
             if msg.contentType == 16:
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
@@ -1161,6 +1255,32 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {"mid":mmid}
                 cl.sendMessage(msg)
+            elif msg.text in ["Join on","joinn on"]:
+              if msg.from_ in admin:
+                if wait["Protectjoin"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"kick Joined Group On")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectjoin"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"kick Joined Group On")
+                    else:
+                        cl.sendText(msg.to,"done")
+            elif msg.text in ["Join off","joinn off"]:
+              if msg.from_ in admin:
+                if wait["Protectjoin"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"kick Joined Group Off")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectjoin"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"kick Joined Group Off")
+                    else:
+                        cl.sendText(msg.to,"done")
             elif msg.text in ["protect on","protect:on","Protect on","Protect:on","p on","P on"]:
               if msg.from_ in admin:
 		if wait["protect"] == True:
@@ -1379,6 +1499,8 @@ def bot(op):
                 else: md+=" Protectinv : off\n"
                 if wait["protectqr"] == True: md+=" Protectqr : on\n"
                 else: md+=" Protectqr : off\n"
+                if wait["Protectjoin"] == True: md+="􀔃􀆑lock􏿿  Block Join\n"
+                else: md+=" Block Join Off\n"
                 if wait["contact"] == True: md+=" Contact : on\n"
                 else: md+=" Contact : off\n"
                 if wait["autoJoin"] == True: md+=" Auto join : on\n"
@@ -2257,6 +2379,59 @@ def bot(op):
                                kf.sendText(msg.to, tulisan)
                          else:
                                cl.sendText(msg.to, "Out of range! ")
+            elif msg.text in ["All@"]:
+                aa = ""
+                bb = ""
+                strt = int(12)
+                akh = int(12)
+                nm = nama
+                #print nm
+                for mm in nm:
+                  akh = akh + 2
+                  aa += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(mm)+"},"""
+                  strt = strt + 6
+                  akh = akh + 4
+                  bb += "\xe2\x98\xbb @x \n"
+                aa = (aa[:int(len(aa)-1)])
+                msg = Message()
+                msg.to = to
+                msg.from_ = profile.mid
+                msg.text = "[ENTION]\n"+bb
+                msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
+                #print msg
+                try:
+                   cl.sendMessage(msg)
+                except Exception as error:
+                    print error
+            elif msg.text in["@tag"]:
+                group = cl.getGroup(msg.to)
+                nama = [contact.mid for contact in group.members]
+                nm1, nm2, nm3, jml = [], [], [], len(nama)
+                if jml <= 100:
+                   mention(msg.to, nama)
+                if jml > 100 and jml < 200:
+                   for i in range(0, 99):
+                       nm1 += [nama[i]]
+                   mention(msg.to, nm1)
+                   for j in range(100, len(nama)-1):
+                       nm2 += [nama[j]]
+                   mention(msg.to, nm2)
+                if jml > 200  and jml < 300:
+                   for i in range(0, 99):
+                       nm1 += [nama[i]]
+                   mention(msg.to, nm1)
+                   for j in range(100, 199):
+                       nm2 += [nama[j]]
+                   mention(msg.to, nm2)
+                   for k in range(200, len(nama)-1):
+                       nm3 += [nama[k]]
+                   mention(msg.to, nm3)
+                if jml > 300:
+                    print "Terlalu Banyak Men 300+"
+                cnt = Message()
+                cnt.text = "Done:"+str(jml)
+                cont.to = msg.to
+                cl.sendMessage(cnt)
             elif msg.text in ["List grup"]:
               if msg.from_ in admin:
                 gid = cl.getGroupIdsJoined()
